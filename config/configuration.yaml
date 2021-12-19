@@ -12,6 +12,12 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 
 
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 192.168.220.0/24
+    - 10.2.0.0/24
+
 sonos: 
   media_player:
     hosts: !secret sonos_hosts
